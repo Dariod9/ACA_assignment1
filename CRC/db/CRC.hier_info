@@ -1,0 +1,28 @@
+|encoder
+a[0] => ~NO_FANOUT~
+a[1] => ~NO_FANOUT~
+a[2] => ~NO_FANOUT~
+a[3] => ~NO_FANOUT~
+a[4] => ~NO_FANOUT~
+a[5] => ~NO_FANOUT~
+a[6] => ~NO_FANOUT~
+a[7] => ~NO_FANOUT~
+a[8] => ~NO_FANOUT~
+a[9] => ~NO_FANOUT~
+a[10] => ~NO_FANOUT~
+a[11] => ~NO_FANOUT~
+a[12] => ~NO_FANOUT~
+a[13] => ~NO_FANOUT~
+a[14] => ~NO_FANOUT~
+a[15] => ~NO_FANOUT~
+coded[0] << <GND>
+coded[1] << <GND>
+coded[2] << <GND>
+coded[3] << <GND>
+coded[4] << <GND>
+coded[5] << <GND>
+coded[6] << <GND>
+coded[7] << <GND>
+coded[8] << <GND>
+
+

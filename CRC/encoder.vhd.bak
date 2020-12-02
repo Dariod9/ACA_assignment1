@@ -1,0 +1,12 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY encoder IS
+  PORT (x: IN STD_LOGIC;
+        y: OUT STD_LOGIC);
+END encoder;
+
+ARCHITECTURE Behavioral OF encoder IS
+BEGIN
+  y <= NOT x;
+END Behavioral;

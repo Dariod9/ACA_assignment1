@@ -4,45 +4,21 @@ use ieee.numeric_std.all;
 
 ENTITY encoder IS
   PORT (a: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        coded: OUT STD_LOGIC_VECTOR(8 DOWNTO 0));
+        a_r: OUT STD_LOGIC_VECTOR(23 DOWNTO 0));
 END encoder;
 
 ARCHITECTURE Behavioral OF encoder IS
-	signal ax : unsigned(15 downto 0);
-	--signal r_temp:unsigned(8 downto 0) <= "00000000" ;
-	signal r:unsigned(8 downto 0);
-	signal d:std_logic_vector(8 downto 0);
-	signal q:unsigned(15 downto 0);
-	signal i:integer;
-	
+	signal r:unsigned(7 downto 0);
 BEGIN
---leva process(a) ou não?
-	--a_temp <= shift_left(unsigned(a),8) or 00000000
-	--i <=22
-process(ax, q)
-begin
 
-	ax <= unsigned(a);--(shift_left(unsigned(a),7));
-	q <= unsigned(a);	
-	d<= "100101111" ;
-
-	for startingBit in 0 to 8 loop
-		for I in 15 to 7 loop
-			--if (d(I-7) = '1') then
-				r(I-7) <= ax(I-startingBit-1) xor q(I);
-				r(I-8) <= ax(I-startingBit-2) xor q(I);
-				r(I-9) <= ax(I-startingBit-3) xor q(I);
-				r(I-10) <= ax(I-startingBit-4) xor q(I);
-				r(I-11) <= ax(I-startingBit-5) xor q(I);
-				r(I-12) <= ax(I-startingBit-6) xor q(I);
-				r(I-13) <= ax(I-startingBit-7) xor q(I);
-				r(I-14) <= ax(I-startingBit-8) xor q(I);
-				r(I-15) <= ax(I-startingBit-9) xor q(I);
-			--else
-				--r(I-8) <= ax(I-startingBit-8);
-			--end if;
-		end loop;
-	end loop;
-	coded<= std_logic_vector(r);
-end process;
+	r(0) <= a(0) xor a(3) xor a(5) xor a(7) xor a(8) xor a(9) xor a(10) xor a(11) xor a(12) xor a(15);
+	r(1) <= a(0) xor a(1) xor a(3) xor a(4) xor a(5) xor a(6) xor a(7) xor a(13) xor a(15);
+	r(2) <= a(0) xor a(1) xor a(2) xor a(3) xor a(4) xor a(6) xor a(9) xor a(10) xor a(11) xor a(12) xor a(14) xor a(15);
+	r(3) <= a(0) xor a(1) xor a(2) xor a(4) xor a(8) xor a(9) xor a(13);
+	r(4) <= a(1) xor a(2) xor a(3) xor a(5) xor a(9) xor a(10) xor a(14);
+	r(5) <= a(0) xor a(2) xor a(4) xor a(5) xor a(6) xor a(7) xor a(8) xor a(9) xor a(12);
+	r(6) <= a(1) xor a(3) xor a(5) xor a(6) xor a(7) xor a(8) xor a(9) xor a(10) xor a(13);
+	r(7) <= a(2) xor a(4) xor a(6) xor a(7) xor a(8) xor a(9) xor a(10) xor a(11) xor a(14);	
+	
+	a_r <= a & std_logic_vector(r);
 END Behavioral;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CRC
-Wed Dec 02 21:42:05 2020
+Fri Dec 04 17:35:56 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -43,13 +43,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Dec 02 21:42:05 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 04 17:35:56 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; CRC                                         ;
-; Top-level Entity Name              ; encoder                                     ;
+; Top-level Entity Name              ; checker                                     ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
+; Total logic elements               ; 21                                          ;
+;     Total combinational functions  ; 21                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 25                                          ;
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                            ; encoder            ; CRC                ;
+; Top-level entity name                                            ; checker            ; CRC                ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -165,13 +165,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                           ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                    ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
-; encoder.vhd                      ; yes             ; User VHDL File  ; C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; checker.vhd                      ; yes             ; User VHDL File  ; C:/Users/DarioMatos/Desktop/ACA/ACA_assignment1/CRC/checker.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -183,20 +183,21 @@ https://fpgasoftware.intel.com/eula.
 ;                          ;                  ;
 ; DSP block 9-bit elements ; 0                ;
 ;                          ;                  ;
-; Maximum fan-out node     ; a[0]             ;
-; Maximum fan-out          ; 1                ;
-; Total fan-out            ; 25               ;
-; Average fan-out          ; 0.50             ;
+; Maximum fan-out node     ; a_r[17]~input    ;
+; Maximum fan-out          ; 5                ;
+; Total fan-out            ; 107              ;
+; Average fan-out          ; 1.51             ;
 +--------------------------+------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
-; |encoder                   ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 25   ; 0            ; |encoder            ; encoder     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                        ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+-------------+--------------+
+; |checker                   ; 21 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 25   ; 0            ; |checker                  ; checker     ; work         ;
+;    |comparator:compr|      ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checker|comparator:compr ; comparator  ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -221,12 +222,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 25                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
+; cycloneiii_lcell_comb ; 21                          ;
+;     normal            ; 21                          ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 19                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 4.47                        ;
 +-----------------------+-----------------------------+
 
 
@@ -235,7 +238,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -245,59 +248,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Dec 02 21:41:51 2020
+    Info: Processing started: Fri Dec 04 17:35:34 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CRC -c CRC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file encoder.vhd
-    Info (12022): Found design unit 1: encoder-Behavioral File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 10
-    Info (12023): Found entity 1: encoder File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file checker.vhd
-    Info (12022): Found design unit 1: checker-Behavioral File: C:/Users/DarioMatos/Desktop/ACA/CRC/checker.vhd Line: 9
-    Info (12023): Found entity 1: checker File: C:/Users/DarioMatos/Desktop/ACA/CRC/checker.vhd Line: 4
-Info (12127): Elaborating entity "encoder" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at encoder.vhd(14): object "d" assigned a value but never read File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 14
-Warning (10492): VHDL Process Statement warning at encoder.vhd(25): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 25
-Warning (10492): VHDL Process Statement warning at encoder.vhd(26): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 26
-Warning (10445): VHDL Subtype or Type Declaration warning at encoder.vhd(30): subtype or type has null range File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 30
-Warning (10492): VHDL Process Statement warning at encoder.vhd(46): signal "r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 46
-Warning (10873): Using initial value X (don't care) for net "r" at encoder.vhd(13) File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 13
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "coded[0]" is stuck at GND File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 7
-    Warning (13410): Pin "coded[1]" is stuck at GND File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 7
-    Warning (13410): Pin "coded[2]" is stuck at GND File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 7
-    Warning (13410): Pin "coded[3]" is stuck at GND File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 7
-    Warning (13410): Pin "coded[4]" is stuck at GND File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 7
-    Warning (13410): Pin "coded[5]" is stuck at GND File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 7
-    Warning (13410): Pin "coded[6]" is stuck at GND File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 7
-    Warning (13410): Pin "coded[7]" is stuck at GND File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 7
-    Warning (13410): Pin "coded[8]" is stuck at GND File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 7
+    Info (12022): Found design unit 1: encoder-Behavioral File: C:/Users/DarioMatos/Desktop/ACA/ACA_assignment1/CRC/encoder.vhd Line: 10
+    Info (12023): Found entity 1: encoder File: C:/Users/DarioMatos/Desktop/ACA/ACA_assignment1/CRC/encoder.vhd Line: 5
+Info (12021): Found 4 design units, including 2 entities, in source file checker.vhd
+    Info (12022): Found design unit 1: checker-Behavioral File: C:/Users/DarioMatos/Desktop/ACA/ACA_assignment1/CRC/checker.vhd Line: 20
+    Info (12022): Found design unit 2: comparator-BehavioralComp File: C:/Users/DarioMatos/Desktop/ACA/ACA_assignment1/CRC/checker.vhd Line: 43
+    Info (12023): Found entity 1: comparator File: C:/Users/DarioMatos/Desktop/ACA/ACA_assignment1/CRC/checker.vhd Line: 5
+    Info (12023): Found entity 2: checker File: C:/Users/DarioMatos/Desktop/ACA/ACA_assignment1/CRC/checker.vhd Line: 15
+Info (12021): Found 0 design units, including 0 entities, in source file encoderteste.vhd
+Info (12127): Elaborating entity "checker" for the top level hierarchy
+Info (12129): Elaborating entity "comparator" using architecture "A:behavioralcomp" for hierarchy "comparator:compr" File: C:/Users/DarioMatos/Desktop/ACA/ACA_assignment1/CRC/checker.vhd Line: 36
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 16 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "a[0]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[1]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[2]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[3]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[4]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[5]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[6]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[7]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[8]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[9]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[10]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[11]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[12]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[13]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[14]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "a[15]" File: C:/Users/DarioMatos/Desktop/ACA/CRC/encoder.vhd Line: 6
-Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 16 input pins
-    Info (21059): Implemented 9 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
+Info (21057): Implemented 46 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 24 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 21 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4842 megabytes
-    Info: Processing ended: Wed Dec 02 21:42:05 2020
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Processing ended: Fri Dec 04 17:35:56 2020
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:42
 
 

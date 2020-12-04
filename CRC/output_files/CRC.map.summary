@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Wed Dec 02 21:42:05 2020
+Analysis & Synthesis Status : Successful - Fri Dec 04 17:35:56 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : CRC
-Top-level Entity Name : encoder
+Top-level Entity Name : checker
 Family : Cyclone IV GX
-Total logic elements : 0
-    Total combinational functions : 0
+Total logic elements : 21
+    Total combinational functions : 21
     Dedicated logic registers : 0
 Total registers : 0
 Total pins : 25

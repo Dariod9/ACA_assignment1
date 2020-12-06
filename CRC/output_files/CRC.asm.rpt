@@ -1,5 +1,5 @@
 Assembler report for CRC
-Thu Dec 03 23:32:43 2020
+Sun Dec 06 19:51:07 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -38,9 +38,9 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Dec 03 23:32:43 2020 ;
+; Assembler Status      ; Successful - Sun Dec 06 19:51:07 2020 ;
 ; Revision Name         ; CRC                                   ;
-; Top-level Entity Name ; encoder                               ;
+; Top-level Entity Name ; checker                               ;
 ; Family                ; Cyclone IV GX                         ;
 ; Device                ; EP4CGX15BF14C6                        ;
 +-----------------------+---------------------------------------+
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-----------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                           ;
 +----------------+-----------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x000C0474                                                                        ;
-; Checksum       ; 0x000C0474                                                                        ;
+; JTAG usercode  ; 0x000BFCC5                                                                        ;
+; Checksum       ; 0x000BFCC5                                                                        ;
 +----------------+-----------------------------------------------------------------------------------+
 
 
@@ -78,15 +78,15 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Dec 03 23:32:41 2020
+    Info: Processing started: Sun Dec 06 19:51:06 2020
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off CRC -c CRC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4750 megabytes
-    Info: Processing ended: Thu Dec 03 23:32:43 2020
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Sun Dec 06 19:51:07 2020
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

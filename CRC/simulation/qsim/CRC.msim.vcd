@@ -3,7 +3,7 @@ $comment
 		vcd file CRC.msim.vcd -direction
 $end
 $date
-	Fri Dec 04 17:41:45 2020
+	Sun Dec 06 19:52:13 2020
 $end
 $version
 	ModelSim Version 2020.1
@@ -75,50 +75,50 @@ $var wire 1 Y ww_a_r [1] $end
 $var wire 1 Z ww_a_r [0] $end
 $var wire 1 [ ww_error $end
 $var wire 1 \ \error~output_o\ $end
-$var wire 1 ] \a_r[8]~input_o\ $end
-$var wire 1 ^ \a_r[19]~input_o\ $end
-$var wire 1 _ \a_r[17]~input_o\ $end
-$var wire 1 ` \a_r[18]~input_o\ $end
-$var wire 1 a \compr|err0~0_combout\ $end
-$var wire 1 b \a_r[11]~input_o\ $end
-$var wire 1 c \a_r[20]~input_o\ $end
-$var wire 1 d \a_r[23]~input_o\ $end
-$var wire 1 e \compr|err0~1_combout\ $end
-$var wire 1 f \a_r[10]~input_o\ $end
-$var wire 1 g \a_r[22]~input_o\ $end
-$var wire 1 h \a_r[12]~input_o\ $end
-$var wire 1 i \a_r[14]~input_o\ $end
-$var wire 1 j \compr|err2~0_combout\ $end
-$var wire 1 k \a_r[2]~input_o\ $end
-$var wire 1 l \a_r[9]~input_o\ $end
-$var wire 1 m \compr|err2~1_combout\ $end
-$var wire 1 n \a_r[13]~input_o\ $end
-$var wire 1 o \compr|err1~0_combout\ $end
-$var wire 1 p \a_r[15]~input_o\ $end
-$var wire 1 q \a_r[21]~input_o\ $end
-$var wire 1 r \compr|err1~1_combout\ $end
-$var wire 1 s \a_r[1]~input_o\ $end
-$var wire 1 t \compr|err1~2_combout\ $end
-$var wire 1 u \a_r[6]~input_o\ $end
-$var wire 1 v \a_r[16]~input_o\ $end
-$var wire 1 w \compr|err6~0_combout\ $end
-$var wire 1 x \compr|errorC~0_combout\ $end
-$var wire 1 y \a_r[5]~input_o\ $end
-$var wire 1 z \compr|err5~0_combout\ $end
-$var wire 1 { \compr|err5~1_combout\ $end
-$var wire 1 | \compr|err3~0_combout\ $end
-$var wire 1 } \a_r[3]~input_o\ $end
-$var wire 1 ~ \compr|err3~1_combout\ $end
-$var wire 1 !! \compr|errorC~1_combout\ $end
-$var wire 1 "! \a_r[0]~input_o\ $end
+$var wire 1 ] \a_r[17]~input_o\ $end
+$var wire 1 ^ \a_r[16]~input_o\ $end
+$var wire 1 _ \a_r[14]~input_o\ $end
+$var wire 1 ` \a_r[13]~input_o\ $end
+$var wire 1 a \a_r[15]~input_o\ $end
+$var wire 1 b \var_H~0_combout\ $end
+$var wire 1 c \var_H~1_combout\ $end
+$var wire 1 d \a_r[21]~input_o\ $end
+$var wire 1 e \a_r[12]~input_o\ $end
+$var wire 1 f \a_r[9]~input_o\ $end
+$var wire 1 g \a_r[3]~input_o\ $end
+$var wire 1 h \compr|err3~0_combout\ $end
+$var wire 1 i \a_r[10]~input_o\ $end
+$var wire 1 j \a_r[8]~input_o\ $end
+$var wire 1 k \compr|err0~3_combout\ $end
+$var wire 1 l \compr|err3~1_combout\ $end
+$var wire 1 m \a_r[23]~input_o\ $end
+$var wire 1 n \a_r[20]~input_o\ $end
+$var wire 1 o \compr|err5~0_combout\ $end
+$var wire 1 p \a_r[5]~input_o\ $end
+$var wire 1 q \compr|errorC~2_combout\ $end
+$var wire 1 r \a_r[7]~input_o\ $end
+$var wire 1 s \a_r[19]~input_o\ $end
+$var wire 1 t \a_r[18]~input_o\ $end
+$var wire 1 u \a_r[22]~input_o\ $end
+$var wire 1 v \compr|err4~0_combout\ $end
+$var wire 1 w \compr|err7~0_combout\ $end
+$var wire 1 x \compr|err7~1_combout\ $end
+$var wire 1 y \a_r[11]~input_o\ $end
+$var wire 1 z \var_C~combout\ $end
+$var wire 1 { \a_r[4]~input_o\ $end
+$var wire 1 | \compr|err4~combout\ $end
+$var wire 1 } \a_r[2]~input_o\ $end
+$var wire 1 ~ \compr|err2~0_combout\ $end
+$var wire 1 !! \a_r[0]~input_o\ $end
+$var wire 1 "! \compr|err0~1_combout\ $end
 $var wire 1 #! \compr|err0~2_combout\ $end
-$var wire 1 $! \compr|errorC~2_combout\ $end
-$var wire 1 %! \a_r[7]~input_o\ $end
-$var wire 1 &! \compr|err7~0_combout\ $end
-$var wire 1 '! \compr|err7~1_combout\ $end
-$var wire 1 (! \a_r[4]~input_o\ $end
-$var wire 1 )! \compr|err4~0_combout\ $end
-$var wire 1 *! \compr|err4~1_combout\ $end
+$var wire 1 $! \compr|err0~0_combout\ $end
+$var wire 1 %! \a_r[1]~input_o\ $end
+$var wire 1 &! \compr|err1~0_combout\ $end
+$var wire 1 '! \compr|errorC~0_combout\ $end
+$var wire 1 (! \a_r[6]~input_o\ $end
+$var wire 1 )! \compr|err6~0_combout\ $end
+$var wire 1 *! \compr|errorC~1_combout\ $end
 $var wire 1 +! \compr|errorC~combout\ $end
 $upscope $end
 $upscope $end
@@ -138,97 +138,97 @@ x<
 0[
 0\
 0]
-1^
+0^
 0_
 1`
-0a
+1a
 0b
 0c
-1d
+0d
 1e
 0f
 0g
-0h
-1i
+1h
+0i
 1j
 0k
 0l
-0m
+1m
 0n
-1o
+0o
 0p
 0q
 1r
-0s
-1t
-1u
-1v
-1w
+1s
+0t
+0u
+0v
+0w
 0x
 0y
-1z
+0z
 1{
 0|
-1}
+0}
 0~
-0!!
-0"!
-1#!
+1!!
+1"!
+0#!
 0$!
-0%!
+1%!
 0&!
 0'!
-1(!
-1)!
-1*!
+0(!
+0)!
+0*!
 0+!
 1!
 0"
 0#
 0$
 1%
-1&
+0&
 0'
-1(
-0)
-1*
-0+
-0,
+0(
+1)
+0*
+1+
+1,
 0-
 0.
 0/
-00
-01
-12
+10
+11
+02
 03
 14
-15
+05
 06
-07
-08
+17
+18
 1C
 0D
 0E
 0F
 1G
-1H
+0H
 0I
-1J
-0K
-1L
-0M
-0N
+0J
+1K
+0L
+1M
+1N
 0O
 0P
 0Q
-0R
-0S
-1T
+1R
+1S
+0T
 0U
 1V
-1W
+0W
 0X
-0Y
-0Z
+1Y
+1Z
 $end
 #1000000

@@ -1,7 +1,7 @@
 onerror {exit -code 1}
 vlib work
 vcom -work work CRC.vho
-vcom -work work Waveform4.vwf.vht
+vcom -work work Waveform8.vwf.vht
 vsim  -c -t 1ps -L cycloneiv -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.checker_vhd_vec_tst
 vcd file -direction CRC.msim.vcd
 vcd add -internal checker_vhd_vec_tst/*

@@ -1,5 +1,5 @@
 Flow report for CRC
-Tue Dec 08 19:47:39 2020
+Tue Dec 08 21:38:53 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Dec 08 19:47:39 2020       ;
+; Flow Status                        ; Successful - Tue Dec 08 21:38:53 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; CRC                                         ;
-; Top-level Entity Name              ; encoder                                     ;
+; Top-level Entity Name              ; checker                                     ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 19 / 14,400 ( < 1 % )                       ;
-;     Total combinational functions  ; 19 / 14,400 ( < 1 % )                       ;
+; Total logic elements               ; 22 / 14,400 ( < 1 % )                       ;
+;     Total combinational functions  ; 22 / 14,400 ( < 1 % )                       ;
 ;     Dedicated logic registers      ; 0 / 14,400 ( 0 % )                          ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 40 / 81 ( 49 % )                            ;
+; Total pins                         ; 25 / 81 ( 31 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 552,960 ( 0 % )                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/08/2020 19:47:06 ;
+; Start date & time ; 12/08/2020 21:38:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CRC                 ;
 +-------------------+---------------------+
@@ -80,7 +80,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 186427140384.160745682612720           ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 93047514675162.160746350417616         ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -88,11 +88,11 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation                    ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --                                ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; encoder     ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; encoder     ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; encoder     ; Top                               ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; checker     ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; checker     ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; checker     ; Top                               ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                    ; encoder                                ; CRC           ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                    ; checker                                ; CRC           ; --          ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -101,12 +101,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:17     ; 1.0                     ; 4865 MB             ; 00:00:35                           ;
-; Fitter               ; 00:00:06     ; 1.0                     ; 5876 MB             ; 00:00:08                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4760 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4811 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4718 MB             ; 00:00:01                           ;
-; Total                ; 00:00:29     ; --                      ; --                  ; 00:00:48                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4842 MB             ; 00:00:31                           ;
+; Fitter               ; 00:00:05     ; 1.0                     ; 5502 MB             ; 00:00:06                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4748 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 4741 MB             ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4706 MB             ; 00:00:01                           ;
+; Total                ; 00:00:25     ; --                      ; --                  ; 00:00:42                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -115,11 +115,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; LAPTOP-O9D0OHDK  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; LAPTOP-O9D0OHDK  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; LAPTOP-O9D0OHDK  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; LAPTOP-O9D0OHDK  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; LAPTOP-O9D0OHDK  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; Dario-PC         ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Dario-PC         ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Dario-PC         ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Dario-PC         ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Dario-PC         ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
